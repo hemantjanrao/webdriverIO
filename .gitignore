@@ -28,6 +28,10 @@ build/Release
 # Dependency directory
 node_modules
 
+# Folders
+allure-report/
+allure-results/
+
 # Optional npm cache directory
 .npm
 
