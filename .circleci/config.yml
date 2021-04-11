@@ -1,0 +1,41 @@
+orbs:
+  browser-tools: circleci/browser-tools@1.1.3
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: 'cimg/node:15.14.0-browsers'
+    steps:
+      - checkout
+      - browser-tools/install-browser-tools
+      - run:
+          command: |
+            google-chrome --version
+            firefox --version
+            geckodriver --version
+            chromedriver --version
+          name: Check install
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: 
+          name: install dependencies
+          command: |
+            yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: "Run tests"
+          command: |
+            npx wdio run wdio.conf.js               
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - test
