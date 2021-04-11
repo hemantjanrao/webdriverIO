@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "outDir": "./.tsbuild/",
+      "sourceMap": false,
+      "target": "ESNext",
+      "module": "commonjs",
+      "removeComments": true,
+      "noImplicitAny": true,
+      "strictPropertyInitialization": true,
+      "strictNullChecks": true,
+      "types": [
+        "node",
+        "webdriverio/sync",
+        "@wdio/mocha-framework",
+        "expect-webdriverio"
+      ],
+    },
+    "include": [
+      "./test/**/*.ts"
+    ]
+  }
