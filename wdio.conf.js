@@ -1,4 +1,5 @@
 
+// eslint-disable-next-line no-undef
 exports.config = {
     //
     // ====================
@@ -72,10 +73,6 @@ exports.config = {
     capabilities: [
         {
             browserName: 'chrome',
-            port: 5555
-        }, 
-        {
-            browserName: 'firefox',
             port: 5555
         }
     ],
