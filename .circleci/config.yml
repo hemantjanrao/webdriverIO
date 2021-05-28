@@ -31,8 +31,15 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: "Run tests"
-          command: |
-            npx wdio run wdio.conf.js               
+          command: yarn test
+          when: always
+      - store_artifacts:
+          path: ~/project/packages/OWN/allure-report 
+          destination: allure_report
+          when: always
+      - store_artifacts:
+          path: ~/project/packages/OWN/_results_
+          when: always                 
 
 # Orchestrate our job run sequence
 workflows:

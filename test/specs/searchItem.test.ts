@@ -1,4 +1,4 @@
-import HomePage from '../pageobjects/home.page';
+import HomePage from '../pages/home.page';
 import '../base/base.test';
 
 describe('Search item', () => {
