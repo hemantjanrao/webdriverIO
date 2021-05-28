@@ -6,12 +6,17 @@
   "author": "Hemant Janrao <hemantjanrao@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "./node_modules/.bin/wdio ./wdio.conf.js"
+    "test": "./node_modules/.bin/wdio ./test/config/wdio.conf.js",
+    "report": "./node_modules/.bin/allure generate"
   },
   "dependencies": {
     "@wdio/cli": "^7.3.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/register": "^7.13.16",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "@wdio/allure-reporter": "^7.3.1",
@@ -21,12 +26,13 @@
     "@wdio/selenium-standalone-service": "^7.3.1",
     "@wdio/spec-reporter": "^7.3.1",
     "@wdio/sync": "^7.3.1",
+    "allure-commandline": "^2.13.8",
     "chromedriver": "^89.0.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4",
-    "wdio-chromedriver-service": "^7.0.0",
     "typescript-logging": "^1.0.0",
-    "typescript-string-operations": "^1.4.1"
+    "typescript-string-operations": "^1.4.1",
+    "wdio-chromedriver-service": "^7.0.0"
   },
   "volta": {
     "node": "14.17.0",
